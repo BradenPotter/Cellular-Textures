@@ -1,0 +1,83 @@
+html {
+    background-color: hsl(0deg 0% 90%);
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    overflow-y: hidden;
+  }
+  * {
+    transition: 0.7s;
+    transition-timing-function: cubic-bezier(0.1, 0.4, 0.2, 1);
+    font: Montserrat;
+  }
+  @keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  
+  .MainContainer {
+    display: absolute;
+    height: 100%;
+    width: auto;
+    height: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border: 2px solid hsl(0deg 0% 5%);
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    margin-bottom: 2.5%;
+    margin-top: 2.5%;
+    position: absolute;
+    background-color: hsl(0deg 0% 90%);
+    animation: fadeIn 2s;
+  }
+
+  .DarkModeLightMode {
+    position: sticky;
+    float: right;
+    right: 0;
+    top: 0;
+    animation: fadeIn 2s;
+  }
+  
+  .text {
+    color:hsl(0deg 0% 05%);
+    width: auto;
+    padding: 20px;
+  }
+
+  #myCanvas {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -moz-box-shadow: 0 0 3px hsl(0deg 0% 05%);
+    -webkit-box-shadow: 0 0 3px hsl(0deg 0% 05%);
+    box-shadow: 0 0 3px hsl(0deg 0% 05%);
+    visibility: hidden;
+  }
+
+  #Home {
+    position: fixed;
+    left: 50%;
+    margin-top: 1%;
+    transform: translate(-50%, 0%);
+  }
+
+  @media screen and (max-width: 600px) {
+    .DarkModeLightMode {
+      position: absolute;
+      right: 0;
+      top: 0;
+      animation: fadeIn 2s;
+    }
+    
+  #Home {
+    position: fixed;
+    left: 50%;
+    top: 80%;
+    transform: translate(-50%, 50%);
+  }
+  }

@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link id="stylesheets" rel="stylesheet" href="CellCSSLight.css">
+    <link rel="icon" href="/Images/logo.jpeg">
+    <title>Cellular Textures</title>
+</head>
+<body>
+<div class="MainContainer">
+    <a href="/index.html"><img id="Home" src="/Images/HomeIcon.png" /></a>
+    <div class="DarkModeLightMode">
+        <object id="SVG" onclick="changeTheme()" type="Moon/svg+xml" data="/Images/Moon.svg">
+        <img id="SunOrMoon" src="/Images/Moon.svg" />
+        </object>
+      </div>
+      <div class="text">
+    <div class="slidecontainer">
+        Width: <input type="range" min="100" max="0" value="100" step="auto" class="slider" id="widthRange">     <span class="output" id="widthOutput">100</span><br />
+        Height: <input type="range" min="100" max="0" value="100" class="slider" step="auto" id="heightRange">     <span class="output" id="heightOutput">100</span><br />
+        <script>
+            document.getElementById('widthRange').max = screen.width - (screen.width * .1);
+            document.getElementById('heightRange').max = screen.height - (screen.height * .50);
+        </script>
+    </div>
+    Amount of Cells: <input id="cellInput" class="item" size="10" type="text" value="" placeholder="" /><br />
+    <button class="item" onClick='simulate()'>Press this to simulate</button><br />
+</div>
+    <canvas id="myCanvas" width="" height=""></canvas>
+</div>
+<script src="CellScript.js"></script>
+    </body>
+</html>
