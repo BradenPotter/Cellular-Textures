@@ -20,8 +20,12 @@
         Width: <input type="range" min="100" max="0" value="100" step="auto" class="slider" id="widthRange">     <span class="output" id="widthOutput">100</span><br />
         Height: <input type="range" min="100" max="0" value="100" class="slider" step="auto" id="heightRange">     <span class="output" id="heightOutput">100</span><br />
         <script>
-            document.getElementById('widthRange').max = screen.width - (screen.width * .1);
-            document.getElementById('heightRange').max = screen.height - (screen.height * .50);
+            const screenwidth = window.innerWidth;
+            const screenheight = window.innerHeight;
+            document.getElementById('widthRange').max = screenwidth - (screenwidth * .1);
+            document.getElementById('heightRange').max = screenheight - (screenheight * .50);
+            document.getElementById('widthRange').value = 100;
+            document.getElementById('heightRange').value = 100;
         </script>
     </div>
     Amount of Cells: <input id="cellInput" class="item" size="10" type="text" value="" placeholder="" /><br />

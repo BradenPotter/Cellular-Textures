@@ -14,7 +14,20 @@ heightSlider.oninput = function () {
     heightOutput = this.value;
     heightValue.innerHTML = this.value;
 }
-
+window.addEventListener("resize", () => {
+    width = window.innerWidth;
+    height = window.innerHeight;
+    document.getElementById('widthRange').max = width - (width * .1);
+    document.getElementById('heightRange').max = height - (height * .50);
+    document.getElementById('widthRange').value = 100;
+    document.getElementById('heightRange').value = 100;
+    document.getElementById('widthOutput').innerHTML = 100;
+    document.getElementById('heightOutput').innerHTML = 100;
+    var canvas = document.getElementById("myCanvas");
+    var ctx = canvas.getContext("2d");
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    canvas.style.visibility = "hidden";
+});
 function simulate() {
     var canvas = document.getElementById("myCanvas");
     canvas.style.visibility = "visible";
@@ -24,8 +37,8 @@ function simulate() {
     var distance = [];
     var largest = 0;
     var temp = 0;
-    var width = widthOutput;
-    var height = heightOutput;
+    var width = document.getElementById('widthOutput').innerHTML;
+    var height = document.getElementById('heightOutput').innerHTML;
     var cells = document.getElementById("cellInput").value;
     document.getElementById('myCanvas').width = width;
     document.getElementById('myCanvas').height = height;
